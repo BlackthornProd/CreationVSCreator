@@ -101,7 +101,8 @@ public class Player : MonoBehaviour {
 
 		if(input.x !=  0){
 			if(trailEffectTime <= 0){
-				Instantiate(trailEffect, transform.position, Quaternion.identity);
+				Vector2 pos = new Vector2(transform.position.x, transform.position.y -1f);
+				Instantiate(trailEffect, pos, Quaternion.identity);
 				trailEffectTime = startTrailEffectTime;
 			} else {
 				trailEffectTime -= Time.deltaTime;
@@ -113,7 +114,8 @@ public class Player : MonoBehaviour {
 
 		if(!controller.collisions.below && input.x == 0){
 			if(trailEffectTime <= 0){
-				Instantiate(trailEffect, transform.position, Quaternion.identity);
+				Vector2 pos = new Vector2(transform.position.x, transform.position.y -1f);
+				Instantiate(trailEffect, pos, Quaternion.identity);
 				trailEffectTime = startTrailEffectTime;
 			} else {
 				trailEffectTime -= Time.deltaTime;

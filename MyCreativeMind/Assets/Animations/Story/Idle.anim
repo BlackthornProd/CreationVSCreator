@@ -28,17 +28,17 @@ AnimationClip:
       - serializedVersion: 2
         time: 1.1666666
         value: 0.309
-        inSlope: 0.31589743
-        outSlope: 0.31589743
+        inSlope: 0.08034783
+        outSlope: 0.08034783
         tangentMode: 136
       - serializedVersion: 2
-        time: 1.95
+        time: 7.6666665
         value: 0.616
         inSlope: 0
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
-        time: 3.15
+        time: 8.866667
         value: 0
         inSlope: 0
         outSlope: 0
@@ -71,7 +71,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 3.15
+    m_StopTime: 8.866667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -99,17 +99,17 @@ AnimationClip:
       - serializedVersion: 2
         time: 1.1666666
         value: 0.309
-        inSlope: 0.31589743
-        outSlope: 0.31589743
+        inSlope: 0.08034783
+        outSlope: 0.08034783
         tangentMode: 136
       - serializedVersion: 2
-        time: 1.95
+        time: 7.6666665
         value: 0.616
         inSlope: 0
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
-        time: 3.15
+        time: 8.866667
         value: 0
         inSlope: 0
         outSlope: 0

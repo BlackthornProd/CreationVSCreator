@@ -37,6 +37,10 @@ public class MusicTitle : MonoBehaviour {
 			if(SceneManager.GetActiveScene().buildIndex != levels[0]){
 				StartCoroutine(FadeOut());
 			}
+		} else if(maxLevels == 2){
+			if(SceneManager.GetActiveScene().buildIndex != levels[0] && SceneManager.GetActiveScene().buildIndex != levels[1]){
+				StartCoroutine(FadeOut());
+			}
 		}
 
 	}

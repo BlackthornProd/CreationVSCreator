@@ -6,18 +6,30 @@ using UnityEngine.SceneManagement;
 public class ContinueManager : MonoBehaviour {
 
 	private ContinueNumber continueNumber;
-	public Animator fadePanel;
-	public Animator music;
+	public GameObject fadePanel;
+
 
 	void Start(){
 		continueNumber = GameObject.FindGameObjectWithTag("Continue").GetComponent<ContinueNumber>();
 	}
 
 	public void LoadScene(){
-		continueNumber.LoadNewScene();
+		StartCoroutine(FadeLoadScene());
 	}
 
 	public void NewGame(){
+		StartCoroutine(FadeNewGame());
+	}
+
+	IEnumerator FadeLoadScene(){
+		fadePanel.SetActive(true);
+		yield return new WaitForSeconds(1.5f);
+		continueNumber.LoadNewScene();
+	}
+
+	IEnumerator FadeNewGame(){
+		fadePanel.SetActive(true);
+		yield return new WaitForSeconds(1.5f);
 		continueNumber.ResetContinue();
 		SceneManager.LoadScene("Level1");
 	}
