@@ -9,6 +9,15 @@ TagManager:
   - Spots
   - UI
   - Continue
+  - MusicTransitions
+  - music01
+  - music02
+  - music03
+  - music04
+  - music05
+  - music06
+  - music07
+  - music08
   layers:
   - Default
   - TransparentFX

@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	public bool noDam;
 	private AudioSource source;
+	bool once;
 
 	void Awake(){
 
@@ -76,7 +77,12 @@ public class PlayerHealth : MonoBehaviour {
 
 		}
 	
-			
+		if(health > 0){
+			once = false;
+			if(Input.GetKeyDown(KeyCode.M)){
+				SceneManager.LoadScene("DirectiveScene");
+			} 
+		}	
 		
 
 		if(health <= 0){
@@ -91,16 +97,18 @@ public class PlayerHealth : MonoBehaviour {
 			}
 		}
 
-		if(Input.GetKeyDown(KeyCode.M)){
-			SceneManager.LoadScene("DirectiveScene");
-		} 
+
 
 	}
 
 	public void TakeDamage(int damage){
 
 		if(noDam == false){
-			source.Play();
+			if(once == false){
+				source.Play();
+				once = true;
+			}
+
 			shake.Shake(0.25f, 0.25f);
 			player.Damage();
 			health -= damage;

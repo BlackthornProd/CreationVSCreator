@@ -32,9 +32,11 @@ public class Player : MonoBehaviour {
 	private PlayerHealth health;
 
 	private AudioSource source;
-	public AudioClip jump;
-	public AudioClip jumpTwo;
 	public AudioClip landing;
+
+	public GameObject trailEffect;
+	private float trailEffectTime;
+	public float startTrailEffectTime;
 
 	void Start() {
 		source = GetComponent<AudioSource>();
@@ -47,13 +49,6 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update() {
-
-		if(Input.GetKeyDown(KeyCode.LeftShift)){
-			moveSpeed *= 2;
-		} 
-		if(Input.GetKeyUp(KeyCode.LeftShift)){
-			moveSpeed = moveSpeed / 2;
-		}
 
 		// detects when on the ground
 		if (controller.collisions.below) {
@@ -81,15 +76,11 @@ public class Player : MonoBehaviour {
 
 
 		// jump and double jump and triple jump
-		if (Input.GetKeyDown(KeyCode.UpArrow) && controller.collisions.below) {
-			source.clip = jump;
-			source.Play();
+		if (Input.GetKeyDown(KeyCode.UpArrow) && controller.collisions.below){
 			foot = true;
 			velocity.y = jumpVelocity;
 		}
 		if (Input.GetKeyDown(KeyCode.UpArrow) && doubleJump == false && !controller.collisions.below){
-			source.clip = jumpTwo;
-			source.Play();
 			velocity.y = jumpVelocity;
 			jumpNum--;
 			if(jumpNum <= 0){
@@ -109,11 +100,25 @@ public class Player : MonoBehaviour {
 
 
 		if(input.x !=  0){
+			if(trailEffectTime <= 0){
+				Instantiate(trailEffect, transform.position, Quaternion.identity);
+				trailEffectTime = startTrailEffectTime;
+			} else {
+				trailEffectTime -= Time.deltaTime;
+			}
 			anim.SetBool("isRunning", true);
 		} else if(input.x == 0){
 			anim.SetBool("isRunning", false);
 		}
 
+		if(!controller.collisions.below && input.x == 0){
+			if(trailEffectTime <= 0){
+				Instantiate(trailEffect, transform.position, Quaternion.identity);
+				trailEffectTime = startTrailEffectTime;
+			} else {
+				trailEffectTime -= Time.deltaTime;
+			}
+		}
 
 	}
 

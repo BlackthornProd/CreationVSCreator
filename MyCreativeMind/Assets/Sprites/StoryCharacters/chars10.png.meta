@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c325c32d213ee0840a56d42fccf90ee1
-timeCreated: 1520680327
+timeCreated: 1527272679
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -137,25 +137,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 47
-        y: 808
-        width: 901
-        height: 584
+        y: 348
+        width: 1707
+        height: 1044
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: chars10_1
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 250
-        width: 1444
-        height: 440
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
